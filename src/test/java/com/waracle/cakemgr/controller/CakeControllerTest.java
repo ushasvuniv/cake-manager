@@ -33,7 +33,7 @@ class CakeControllerTest {
 
     @Test
     void testGetAllCakes() throws Exception {
-        List<Cake> cakes = List.of(new Cake(1L, "Vanilla", "Vanilla", 8.0));
+        List<Cake> cakes = List.of(new Cake(1L, "Vanilla", "Vanilla", ""));
         Mockito.when(cakeService.getAll()).thenReturn(cakes);
 
         mockMvc.perform(get("/cakes")
@@ -43,8 +43,8 @@ class CakeControllerTest {
 
     @Test
     void testAddCake() throws Exception {
-        Cake cake = new Cake(null, "Red Velvet", "Red", 12.0);
-        Cake savedCake = new Cake(1L, "Red Velvet", "Red", 12.0);
+        Cake cake = new Cake(null, "Red Velvet", "Red", "");
+        Cake savedCake = new Cake(1L, "Red Velvet", "Red", "");
 
         Mockito.when(cakeService.add(Mockito.any())).thenReturn(savedCake);
 
@@ -57,7 +57,7 @@ class CakeControllerTest {
 
     @Test
     void testUpdateCake() throws Exception {
-        Cake updatedCake = new Cake(1L, "Chocolate Cake", "Chocolate", 15.0);
+        Cake updatedCake = new Cake(1L, "Chocolate Cake", "Chocolate", "");
 
         Mockito.when(cakeService.update(Mockito.eq(1L), Mockito.any())).thenReturn(updatedCake);
 

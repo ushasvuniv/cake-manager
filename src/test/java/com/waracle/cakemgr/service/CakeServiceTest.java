@@ -27,8 +27,8 @@ class CakeServiceTest {
 
     @Test
     void testAddCake() {
-        Cake cake = new Cake(null, "Chocolate", "Chocolate", 10.0);
-        Cake savedCake = new Cake(1L, "Chocolate", "Chocolate", 10.0);
+        Cake cake = new Cake(null, "Chocolate", "Chocolate", "");
+        Cake savedCake = new Cake(1L, "Chocolate", "Chocolate", "");
 
         Mockito.when(cakeRepository.save(cake)).thenReturn(savedCake);
 
@@ -39,8 +39,8 @@ class CakeServiceTest {
     @Test
     void testGetAllCakes() {
         List<Cake> cakes = List.of(
-                new Cake(1L, "Vanilla", "Vanilla", 8.5),
-                new Cake(2L, "Strawberry", "Strawberry", 9.0)
+                new Cake(1L, "Vanilla", "Vanilla", ""),
+                new Cake(2L, "Strawberry", "Strawberry", "")
         );
 
         Mockito.when(cakeRepository.findAll()).thenReturn(cakes);
